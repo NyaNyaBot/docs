@@ -1,0 +1,46 @@
+.rst-content .toctree-wrapper>p.caption, h1, h2, h3, h4, h5, h6, p, .rst-content .section ul {
+    margin-bottom: 16px;
+}
+
+.rst-content dl dt {
+    margin-bottom: 0;
+}
+
+.wy-nav-content {
+    max-width: 1024px;
+}
+
+.wy-nav-content-wrap {
+    margin-left: 300px;
+    background: #fcfcfc;
+    min-height: 100%;
+}
+
+.wy-side-nav-search input[type="text"] {
+    border-radius: 0;
+}
+
+p {
+    font-size: 15px;
+}
+
+h2 {
+    border-bottom: 1px solid #e1e4e5;
+}
+
+footer {
+    color: grey;
+    font-size: 95%;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0;
+    font-size: 95%;
+}
+
+@media screen and (max-width:768px) {
+    .wy-nav-content-wrap {
+        margin-left: 0
+    }
+}

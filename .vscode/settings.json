@@ -1,0 +1,8 @@
+{
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": false,
+    "restructuredtext.languageServer.disabled": true,
+    "restructuredtext.linter.disabled": true,
+    "restructuredtext.confPath": "${workspaceFolder}\\docs"
+}
