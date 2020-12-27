@@ -30,6 +30,10 @@ Die Abhängigkeiten können entweder über PyCharm, oder über die Konsole insta
     $ pip install -U -r requirements.txt
     $ pip install -U -r requirements-dev.txt
 
+Zusätzliche Einstellungen
+=========================
+Unter ``File | Settings | Tools | Python Integrated Tools`` muss *Docstring format* auf ``Google`` umgestellt werden.
+
 Plugins einrichten
 =================
 Folgende Plugins müssen installiert werden:
@@ -50,7 +54,7 @@ Mypy
 * **Path to config file:** ``.mypy.ini``
 * **Arguments:** *<leer>*
 
-Hier sind jeweils die vollständigen Pfade einzutragen und für Windows die EXE zu wählen.
+Hier sind jeweils die vollständigen Pfade einzutragen und für Windows die EXE zu wählen. Zusätzlich wird strengstens empfohlen, unter "Inspections" Mypy auszuschalten, da die Real-Time-Analyse die Perfomance der IDE stark einschränkt.
 
 Danach kann unten in der IDE der "Mypy"-Tab gefunden und aktiviert werden. Hier lässt sich sowohl die ganze Datei, das gesamte Modul, als auch nur die geänderten Dateien überprüfen.
 
@@ -64,7 +68,7 @@ Pylint
 * **Path to config file:** ``.pylintrc``
 * **Arguments:** *<leer>*
 
-Hier sind jeweils die vollständigen Pfade einzutragen und für Windows die EXE zu wählen.
+Hier sind jeweils die vollständigen Pfade einzutragen und für Windows die EXE zu wählen. Zusätzlich wird strengstens empfohlen, unter "Inspections" Pylint auszuschalten, da die Real-Time-Analyse die Perfomance der IDE stark einschränkt.
 
 Danach kann unten in der IDE der "Pylint"-Tab gefunden und aktiviert werden. Hier lässt sich sowohl die ganze Datei, das gesamte Modul, als auch nur die geänderten Dateien überprüfen.
 
