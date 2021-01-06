@@ -30,12 +30,25 @@ Die Abhängigkeiten können entweder über PyCharm, oder über die Konsole insta
     $ pip install -U -r requirements.txt
     $ pip install -U -r requirements-dev.txt
 
+error: Microsoft Visual C++ 14.0 or greater is required.
+--------------------------------------------------------
+
+Wenn die Fehlermeldung ``error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools"`` erscheint, wird **nicht empfohlen**, dies zu installieren. Diese Fehlermeldung bedeutet lediglich, dass kein Binary-Wheel vorhanden ist, was insbesondere bei *mysqlclient* und seinen Abhängigkeiten (*greenlet*, etc.) vorkommen kann.
+
+Stattdessen sollte das aktuelle Wheel von der "`University of California, Irvine <https://www.lfd.uci.edu/~gohlke/pythonlibs/>`_" heruntergeladen und über die Kommandozeile installiert werden:
+
+.. code-block:: console
+
+    $ pip install "mysqlclient‑1.4.6‑cp39‑cp39‑win_amd64.whl"
+
+*cp* gibt hierbei die Python-Version an, *amd64* die System-Architektur (64-Bit).
+
 Zusätzliche Einstellungen
 =========================
 Unter ``File | Settings | Tools | Python Integrated Tools`` muss *Docstring format* auf ``Google`` umgestellt werden.
 
 Plugins einrichten
-=================
+==================
 Folgende Plugins müssen installiert werden:
 
 +--------+---------------------------------------------------+
@@ -74,9 +87,17 @@ Danach kann unten in der IDE der "Pylint"-Tab gefunden und aktiviert werden. Hie
 
 Vor einem Commit kann an der rechten Seite auch die neue Checkbox zum Überprüfen mit Pylint angehakt werden.
 
+Datenbank
+=========
+Eine MySQL-kompatible Datenbank wird benötigt; empfohlen wird MariaDB. Es muss lediglich eine Datenbank erstellt werden, wobei die Standard-Kollation auf ``utf8mb4_unicode_ci`` festgelegt werden sollte. Die Datenbank-Einstellungen können in der :doc:`Konfiguration <configuration>` vorgenommen werden.
+
+Konfigurationsdatei anpassen
+============================
+Die ``config.json.example`` muss nach ``config.json`` kopiert und angepasst werden (siehe :doc:`Konfiguration <configuration>`).
+
 Starten
 =======
-Um den Bot zu starten muss oben rechts in PyCharm eine neue Run-Configuration hinzugefügt werden. Hier reicht lediglich, von "*Script path*" auf "*Module name*" umzustellen und ``nyanyabot`` einzugeben. Zusätzliche Parameter lassen sich im Eingabefeld darunter übergeben. 
+Um den Bot zu starten muss oben rechts in PyCharm eine neue Run-Configuration hinzugefügt werden. Hier reicht lediglich, von "*Script path*" auf "*Module name*" umzustellen und ``nyanyabot`` einzugeben. Zusätzliche Parameter lassen sich im Eingabefeld darunter übergeben. I.d.R. reicht es, hier ``..\config.json`` einzugeben, um die config.json aus dem übergeordneten Pfad zu laden.
 
 Code einchecken
 ===============
